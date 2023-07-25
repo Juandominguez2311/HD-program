@@ -21,7 +21,7 @@ export default function ItemsPerPage({ item }: any) {
     <div
       style={styles.container}
       className="flex items-end text-sm hidden gap-2 lg:flex "
-      data-testid="items-per-page-container" // Add data-testid here
+      data-testid="items-per-page-container"
     >
       <button>
         <Link href={"?item=" + item + "&itemsPage=" + 4} style={styles.link}>
