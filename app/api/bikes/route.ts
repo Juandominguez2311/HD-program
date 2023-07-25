@@ -6,11 +6,19 @@ type BikesProps = {
   itemCount: number;
 };
 
+export interface Bike {
+  id: string;
+  name: string;
+  price: string;
+  imageSrc: string;
+  description: string;
+}
+
 export default async function getAllbikes({
   currentPage,
   pageSize,
   itemCount,
-}: BikesProps): Promise<any[]> {
+}: BikesProps): Promise<Bike[]> {
   try {
     let bikesPaginated;
     if (pageSize === 4 || pageSize === 8 || pageSize === 12) {

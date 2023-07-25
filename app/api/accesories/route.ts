@@ -5,11 +5,18 @@ type AccesoriesProps = {
   itemCount: number;
 };
 
+export interface Accesory {
+  id: string;
+  name: string;
+  price: string;
+  imageSrc: string;
+  description: string;
+}
 export default async function getAllAccesories({
   currentPage,
   pageSize,
   itemCount,
-}: AccesoriesProps): Promise<any[]> {
+}: AccesoriesProps): Promise<Accesory[]> {
   try {
     let accesories;
     if (pageSize === 4 || pageSize === 8 || pageSize === 12) {
