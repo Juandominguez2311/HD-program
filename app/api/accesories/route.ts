@@ -1,18 +1,18 @@
 import prisma from "../../lib/prismadb";
+type AccesoriesProps = {
+  currentPage: number;
+  pageSize: number;
+  itemCount: number;
+};
 
 export default async function getAllAccesories({
   currentPage,
   pageSize,
   itemCount,
-  paginated,
-}: any): Promise<any[]> {
+}: AccesoriesProps): Promise<any[]> {
   try {
     let accesories;
-    if (
-      parseInt(pageSize) === 4 ||
-      parseInt(pageSize) === 8 ||
-      parseInt(pageSize) === 12
-    ) {
+    if (pageSize === 4 || pageSize === 8 || pageSize === 12) {
       accesories = await prisma.accesories.findMany({
         orderBy: { id: "desc" },
         skip:

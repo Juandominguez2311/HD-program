@@ -16,7 +16,7 @@ const styles = {
   },
 };
 
-export default function ItemsPerPage({ item }: any) {
+export default function ItemsPerPage({ item }: { item: string }) {
   return (
     <div
       style={styles.container}

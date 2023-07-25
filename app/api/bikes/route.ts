@@ -1,10 +1,16 @@
 import prisma from "../../lib/prismadb";
 
+type BikesProps = {
+  currentPage: number;
+  pageSize: number;
+  itemCount: number;
+};
+
 export default async function getAllbikes({
   currentPage,
   pageSize,
   itemCount,
-}: any): Promise<any[]> {
+}: BikesProps): Promise<any[]> {
   try {
     let bikesPaginated;
     if (pageSize === 4 || pageSize === 8 || pageSize === 12) {

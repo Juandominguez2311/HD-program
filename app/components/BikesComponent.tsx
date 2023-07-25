@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Accesories, Bykes } from "@prisma/client";
+import { Bikes } from "@prisma/client";
 
 interface BikesComponent {
-  data: Bykes;
+  data: Bikes;
   key: string;
 }
 const styles = {
