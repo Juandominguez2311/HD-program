@@ -12,7 +12,7 @@ describe('getAllBikes function', () => {
     jest.clearAllMocks();
   });
 
-  it('returns accesories', async () => {
+  it('returns bikes', async () => {
     prisma.bikes.findMany.mockResolvedValueOnce([
       { id: 1, name: 'Accessory 1' },
       { id: 2, name: 'Accessory 2' },
@@ -46,7 +46,7 @@ describe('getAllBikes function', () => {
     ]);
   });
 
-  it('throws an error when an error occurs in prisma', async () => {
+  it('throws an error', async () => {
     prisma.bikes.findMany.mockRejectedValueOnce(new Error('Prisma error'));
 
     const pageSize = 8;
@@ -55,7 +55,7 @@ describe('getAllBikes function', () => {
     const paginated = true;
 
     await expect(
-getAllBikes({ pageSize, currentPage, itemCount, paginated })
+      getAllBikes({ pageSize, currentPage, itemCount, paginated })
     ).rejects.toThrowError('Prisma error');
   });
 });

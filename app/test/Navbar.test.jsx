@@ -1,10 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Navbar from "./../components/Navbar";
+import Navbar from "../components/Navbar";
 
 describe("Navbar component", () => {
-  it("renders the icons and texts on the left correctly", () => {
+  it("renders the icons and texts  correctly", () => {
     render(<Navbar />);
 
     const dollarSignIcon = screen.getByTestId("faDollarSign");
@@ -17,7 +17,7 @@ describe("Navbar component", () => {
     expect(userLargeIcon).toBeInTheDocument();
   });
 
-  it("renders the navigation links correctly", () => {
+  it("renders links correctly", () => {
     render(<Navbar />);
 
     const bikeLink = screen.getByText("Bikes");

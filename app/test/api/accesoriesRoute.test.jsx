@@ -46,7 +46,7 @@ describe('getAllAccesories function', () => {
     ]);
   });
 
-  it('throws an error when an error occurs in prisma', async () => {
+  it('throws an error', async () => {
     prisma.accesories.findMany.mockRejectedValueOnce(new Error('Prisma error'));
 
     const pageSize = 8;

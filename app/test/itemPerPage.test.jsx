@@ -4,12 +4,12 @@ import '@testing-library/jest-dom/extend-expect';
 import ItemsPerPage from '../components/ItemsPerPageComponent';
 
 describe('ItemsPerPage component', () => {
-  it('renders buttons with correct links', () => {
+  it('renders btn with correct links', () => {
     const item = 'example-item';
     render(<ItemsPerPage item={item} />);
 
-    const buttons = screen.getAllByRole('button');
-    expect(buttons).toHaveLength(4);
+    const btn = screen.getAllByRole('button');
+    expect(btn).toHaveLength(4);
 
     const links = screen.getAllByRole('link');
     expect(links).toHaveLength(4);
@@ -20,18 +20,18 @@ describe('ItemsPerPage component', () => {
     expect(links[3]).toHaveAttribute('href', `?item=${item}`);
   });
 
-  it('renders button text correctly', () => {
+  it('renders btn text correctly', () => {
     const item = 'example-item';
     render(<ItemsPerPage item={item} />);
 
-    const buttons = screen.getAllByRole('button');
-    expect(buttons[0]).toHaveTextContent('4');
-    expect(buttons[1]).toHaveTextContent('8');
-    expect(buttons[2]).toHaveTextContent('12');
-    expect(buttons[3]).toHaveTextContent('100');
+    const btn = screen.getAllByRole('button');
+    expect(btn[0]).toHaveTextContent('4');
+    expect(btn[1]).toHaveTextContent('8');
+    expect(btn[2]).toHaveTextContent('12');
+    expect(btn[3]).toHaveTextContent('100');
   });
 
-  it('renders the container with correct styles', () => {
+  it('renders container correct styles', () => {
     const item = 'example-item';
     render(<ItemsPerPage item={item} />);
 

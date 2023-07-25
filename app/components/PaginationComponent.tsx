@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 interface PaginationComponentProps {
   currentPage: number;

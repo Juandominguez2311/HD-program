@@ -24,6 +24,6 @@
      }
     
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "jest.setup.js", "jest.config.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "jest.setup.js", "jest.config.ts", "app/test/api/accesory/SingleAccesory.test.jsx", "app/test/Navbar.test.jsx", "app/test/api/accesoriesRoute.test.jsx", "app/test/api/bikesRoute.test.jsx", "app/test/PaginationComponent.test.jsx", "app/test/CustomInput.jsx"],
   "exclude": ["node_modules"]
 }

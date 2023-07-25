@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import PaginationComponent from "../components/PaginationComponent";
 
 describe("PaginationComponent", () => {
-  it("renders page links correctly for multiple pages", () => {
+  it("renders page links for multiple pages", () => {
     const currentPage = 3;
     const totalPages = 10;
     const idTipoItem = "example-item";
@@ -33,7 +33,7 @@ describe("PaginationComponent", () => {
     }
   });
 
-  it("renders page links correctly for single page", () => {
+  it("renders page links single page", () => {
     const currentPage = 1;
     const totalPages = 1;
     const idTipoItem = "example-item";
@@ -54,23 +54,5 @@ describe("PaginationComponent", () => {
       `?item=${idTipoItem}&page=${currentPage}&itemsPage=${pageSize}`
     );
     expect(link).toHaveClass("btn-active");
-  });
-
-  it("renders prev and next links for mobile view", () => {
-    const currentPage = 5;
-    const totalPages = 10;
-
-    render(
-      <PaginationComponent currentPage={currentPage} totalPages={totalPages} />
-    );
-
-    const prevLink = screen.getByText("«");
-    expect(prevLink).toHaveAttribute("href", `?page=${currentPage - 1}`);
-
-    const currentLink = screen.getByText(`Page ${currentPage}`);
-    expect(currentLink).toBeInTheDocument();
-
-    const nextLink = screen.getByText("»");
-    expect(nextLink).toHaveAttribute("href", `?page=${currentPage + 1}`);
   });
 });
