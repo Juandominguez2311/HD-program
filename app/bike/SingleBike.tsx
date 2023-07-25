@@ -201,26 +201,33 @@ export default function Singlebike({
             <form className="w-[600px] py-12 flex flex-col items-right gap-4">
               <>
                 <div className="flex flex-col gap-2 py-4 w-full">
-                  <CustomInput
-                    big
-                    placeholder="First Name"
-                    id="firstName"
-                    type="text"
-                    value={state.firstName}
-                    name="firstName"
-                    onChange={handleChange}
-                    invalid={invalid.firstName}
-                  />
-                  <CustomInput
-                    big
-                    placeholder="Last Name"
-                    id="lastName"
-                    type="text"
-                    value={state.lastName}
-                    name="lastName"
-                    onChange={handleChange}
-                    invalid={invalid.lastName}
-                  />
+                  <div className="flex flex-row gap-2 py-4 w-full">
+                    <div className="flex-1">
+                      <CustomInput
+                        big
+                        placeholder="First Name"
+                        id="firstName"
+                        type="text"
+                        value={state.firstName}
+                        name="firstName"
+                        onChange={handleChange}
+                        invalid={invalid.firstName}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <CustomInput
+                        big
+                        placeholder="Last Name"
+                        id="lastName"
+                        type="text"
+                        value={state.lastName}
+                        name="lastName"
+                        onChange={handleChange}
+                        invalid={invalid.lastName}
+                      />
+                    </div>
+                  </div>
+
                   <CustomInput
                     big
                     placeholder="Email"
